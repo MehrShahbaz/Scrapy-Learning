@@ -7,3 +7,6 @@ This repo has implementation for scrappy
 - The Details will be updated in the Dir ReadME.md
 
 ## Task 1
+
+This python Script scrapes website [Quotes to Scrape](https://quotes.toscrape.com/)
+- Check the ReadME for the this app
