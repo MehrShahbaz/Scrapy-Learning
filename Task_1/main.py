@@ -17,7 +17,7 @@ def main():
         os.system("python app_concurrent_futures.py")
     else:
         print(
-            "Invalid option. Use 'as' for app.py or 'ap' for app_multiprocessing.py or 'ac' for app_concurrent_futures.py"
+            "Invalid option.Use:\n'as' for app.py\n'ap' for app_multiprocessing.py\n'ac' for app_concurrent_futures.py"
         )
 
 
