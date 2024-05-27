@@ -19,9 +19,9 @@ python main.py as
 ```bash
 python main.py ap
 ```
-### Multiprocessing app
+### Concurrent Futures app
 ```bash
-python main.py at
+python main.py ac
 ```
 
 ## Description

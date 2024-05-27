@@ -13,8 +13,12 @@ def main():
         os.system("python app.py")
     elif option == "ap":
         os.system("python app_multiprocessing.py")
+    elif option == "ac":
+        os.system("python app_concurrent_futures.py")
     else:
-        print("Invalid option. Use 'as' for app.py and 'ap' for app_multiprocessing.py")
+        print(
+            "Invalid option. Use 'as' for app.py or 'ap' for app_multiprocessing.py or 'ac' for app_concurrent_futures.py"
+        )
 
 
 if __name__ == "__main__":
