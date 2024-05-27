@@ -13,6 +13,10 @@ This repo has implementation for scrappy
 ```bash
 task1-implement-quotes-to-scrape-scraper
 ```
+##### Dir Name
+```bash
+Task_1
+```
 ##### Details
 - Implement Scraper
 - Time and Memory Usage for the python program
@@ -22,6 +26,10 @@ task1-implement-quotes-to-scrape-scraper
 ```bash
 task1-implement-quotes-to-scrape-scraper-using-multi-processing
 ```
+##### Dir Name
+```bash
+Task_1
+```
 ##### Details
 - Enhance Revision 1 implementation using Multi-Processing.
 
@@ -30,6 +38,10 @@ task1-implement-quotes-to-scrape-scraper-using-multi-processing
 ```bash
 task1-implement-quotes-to-scrape-scraper-using-multi-threading
 ```
+##### Dir Name
+```bash
+Task_1
+```
 ##### Details
 - Enhance Revision 1 implementation using Multi-Threading.
 
@@ -37,6 +49,10 @@ task1-implement-quotes-to-scrape-scraper-using-multi-threading
 ##### Branch name
 ```bash
 task1-implement-quotes-to-scrape-scraper-using-concurrent-futures
+```
+##### Dir Name
+```bash
+Task_1
 ```
 ##### Details
 - Enhance Revision 1 implementation using Concurrent-Futures.
