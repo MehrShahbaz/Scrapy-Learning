@@ -11,15 +11,24 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-
+### Simple app
 ```bash
-python main.py
+python main.py as
+```
+### Multiprocessing app
+```bash
+python main.py ap
+```
+### Concurrent Futures app
+```bash
+python main.py ac
 ```
 
 ## Description
 - After the Usage command is run the website will be scrapped
 - A new file (data.json) if not existing will be created
 - The data will be stored in the file
+- time.json file be created with list of execution time which is in .gitignore
 
 ## Data Format
 
