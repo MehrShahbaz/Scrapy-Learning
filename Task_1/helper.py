@@ -84,11 +84,6 @@ def extract_quotes(soup, url):
         for div in soup.select(".quote")
     ]
 
-def print_execution_time(start, end):
-    """
-    Print the time taken for an operation.
-    """
-    custom_print(f"Time taken = {end-start:.3f} Seconds", True)
 
 def convert_to_mbs(data):
     """
@@ -102,3 +97,30 @@ def print_memory_use(current, peak):
     """
     custom_print(f"Current memory usage: {convert_to_mbs(current):.2f} MB")
     custom_print(f"Peak memory usage: {convert_to_mbs(peak):.2f} MB", True)
+
+
+def append_to_list_in_file(key, number):
+    try:
+        try:
+            with open("time.json", "r") as file:
+                data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            # If file does not exist or is empty or contains invalid JSON, initialize with an empty dictionary
+            data = {}
+
+        if key in data:
+            data[key].append(number)
+        else:
+            data[key] = [number]
+
+        with open("time.json", "w") as file:
+            json.dump(data, file)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+def print_execution_time(start, end):
+    """
+    Print the time taken for an operation.
+    """
+    custom_print(f"Time taken = {end-start:.3f} Seconds", True)
