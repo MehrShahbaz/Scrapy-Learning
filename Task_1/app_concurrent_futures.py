@@ -1,6 +1,11 @@
 import concurrent.futures
 from timeit import default_timer as timer
-from helper import (
+import sys
+import os
+
+sys.path.append(os.path.dirname(__file__) + "/..")
+
+from utils import (
     append_to_list_in_file,
     custom_print,
     extract_quotes,
