@@ -1,21 +1,28 @@
 from timeit import default_timer as timer
 import tracemalloc
-from helper import (
+import sys
+import os
+
+sys.path.append(os.path.dirname(__file__) + "/..")
+
+from utils import (
+    append_to_list_in_file,
+    convert_to_mbs,
+    custom_print,
+    extract_quotes,
     fetch_page,
     find_next_page_url,
-    custom_print,
-    write_in_file,
-    extract_quotes,
     print_execution_time,
     print_memory_use,
-    convert_to_mbs,
-    append_to_list_in_file,
+    write_in_file,
 )
 
 
-# Method to get all the quotes from the URL
-# Returns a list of quotes
-def scrape_quotes(base_url):
+def scrape_quotes(base_url: str):
+    """
+    Method to get all the quotes from the URL
+    Returns a list of quotes
+    """
     current_url = base_url
     data = []
     while current_url:
@@ -24,6 +31,7 @@ def scrape_quotes(base_url):
             data.extend(extract_quotes(soup, current_url))
             custom_print("Current Url: " + current_url, True)
             current_url = find_next_page_url(soup, base_url)
+            break
         else:
             break
     return data

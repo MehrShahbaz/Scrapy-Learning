@@ -1,13 +1,18 @@
 import concurrent.futures
 from timeit import default_timer as timer
-from helper import (
+import sys
+import os
+
+sys.path.append(os.path.dirname(__file__) + "/..")
+
+from utils import (
+    append_to_list_in_file,
+    custom_print,
+    extract_quotes,
     fetch_page,
     find_next_page_url,
-    custom_print,
-    write_in_file,
-    extract_quotes,
     print_execution_time,
-    append_to_list_in_file,
+    write_in_file,
 )
 
 
@@ -22,9 +27,11 @@ def process_page(args):
     return [], None
 
 
-# Method to get all the quotes from the URL
-# Returns a list of quotes
 def scrape_quotes(base_url):
+    """
+    Method to get all the quotes from the URL
+    Returns a list of quotes
+    """
     current_url = base_url
     data = []
     with concurrent.futures.ProcessPoolExecutor() as executor:
