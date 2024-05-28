@@ -1,3 +1,4 @@
+# sort imports
 from timeit import default_timer as timer
 import tracemalloc
 from helper import (
