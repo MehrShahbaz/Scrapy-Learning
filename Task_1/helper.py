@@ -7,7 +7,8 @@ breakPrint = "\n================================================================
 # HTTP status code for a successful response
 response_ok = 200
 
-def custom_print(data, endPrint=False):
+
+def custom_print(data: any, endPrint=False):
     """
     Print data with a custom separator before and after the content.
     If endPrint is True, print the separator after the content as well.
@@ -17,7 +18,8 @@ def custom_print(data, endPrint=False):
     if endPrint:
         print(breakPrint)
 
-def print_list(data):
+
+def print_list(data: list[any]):
     """
     Print each item in the list using custom_print function.
     """
@@ -25,7 +27,8 @@ def print_list(data):
         custom_print(x)
     print(breakPrint)
 
-def write_in_file(data, file_name):
+
+def write_in_file(data: any, file_name: str):
     """
     Write data to a file in JSON format. If an error occurs, print an error message.
     """
@@ -36,7 +39,8 @@ def write_in_file(data, file_name):
     except:
         print(f"Error Writing to the file: {file_name}")
 
-def find_next_page_url(soup, base_url):
+
+def find_next_page_url(soup: BeautifulSoup, base_url: str):
     """
     Find the URL for the next page from the BeautifulSoup object.
     If a next page link exists, return the full URL; otherwise, return None.
@@ -44,19 +48,22 @@ def find_next_page_url(soup, base_url):
     next_li = soup.select_one(".next a")
     return base_url + next_li.get("href") if next_li else None
 
-def remove_character(string, chars):
+
+def remove_character(string: str, chars: list[str]):
     """
     Remove specific characters from a string.
     """
     return "".join([c for c in string if c not in chars])
 
-def format_quote(data):
+
+def format_quote(data: str):
     """
     Format the quote by removing specific characters (e.g., quotation marks).
     """
     return remove_character(data, ["”", "“"])
 
-def fetch_page(url):
+
+def fetch_page(url: str):
     """
     Fetch the HTML content of a given URL using requests and parse it with BeautifulSoup.
     If an error occurs, print an error message and return None.
@@ -68,9 +75,9 @@ def fetch_page(url):
         return BeautifulSoup(response.text, "html.parser")
     except:
         print(f"Error fetching the URL: {url}")
-        return None
 
-def extract_quotes(soup, url):
+
+def extract_quotes(soup: BeautifulSoup, url: str):
     """
     Extract quotes, authors, and tags from the BeautifulSoup object and return them as a list of dictionaries.
     """
@@ -85,13 +92,14 @@ def extract_quotes(soup, url):
     ]
 
 
-def convert_to_mbs(data):
+def convert_to_mbs(data: float):
     """
     Convert bytes to megabytes.
     """
     return data / (1024 * 1024)
 
-def print_memory_use(current, peak):
+
+def print_memory_use(current: float, peak: float):
     """
     Print the current and peak memory usage in megabytes.
     """
@@ -99,7 +107,7 @@ def print_memory_use(current, peak):
     custom_print(f"Peak memory usage: {convert_to_mbs(peak):.2f} MB", True)
 
 
-def append_to_list_in_file(key, number):
+def append_to_list_in_file(key: str, number: float):
     try:
         try:
             with open("time.json", "r") as file:
@@ -119,7 +127,7 @@ def append_to_list_in_file(key, number):
         print(f"An error occurred: {e}")
 
 
-def print_execution_time(start, end):
+def print_execution_time(start: float, end: float):
     """
     Print the time taken for an operation.
     """
