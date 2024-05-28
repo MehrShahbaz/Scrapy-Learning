@@ -84,7 +84,6 @@ def extract_quotes(soup, url):
         for div in soup.select(".quote")
     ]
 
-
 def convert_to_mbs(data):
     """
     Convert bytes to megabytes.
@@ -97,7 +96,6 @@ def print_memory_use(current, peak):
     """
     custom_print(f"Current memory usage: {convert_to_mbs(current):.2f} MB")
     custom_print(f"Peak memory usage: {convert_to_mbs(peak):.2f} MB", True)
-
 
 def append_to_list_in_file(key, number):
     try:
@@ -117,7 +115,6 @@ def append_to_list_in_file(key, number):
             json.dump(data, file)
     except Exception as e:
         print(f"An error occurred: {e}")
-
 
 def print_execution_time(start, end):
     """
